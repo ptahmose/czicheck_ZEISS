@@ -10,6 +10,9 @@ on:
 permissions:
   contents: read
 
+env:
+  VCPKG_COMMIT: "35a50301d38f17804966342d3eb930fc694e1f56"
+
 jobs:
   build:
     strategy:
@@ -73,6 +76,9 @@ jobs:
             echo "Cloning vcpkg to $VCPKG_ROOT"
             git clone https://github.com/microsoft/vcpkg.git "$VCPKG_ROOT"
           fi
+
+          git -C "$VCPKG_ROOT" fetch --depth 1 origin "${{ env.VCPKG_COMMIT }}"
+          git -C "$VCPKG_ROOT" checkout --force "${{ env.VCPKG_COMMIT }}"
 
           if [[ "$RUNNER_OS" == "Windows" ]]; then
             if [ ! -f "$VCPKG_ROOT/vcpkg.exe" ]; then
@@ -203,6 +209,9 @@ jobs:
             echo "Cloning vcpkg to $VCPKG_ROOT"
             git clone https://github.com/microsoft/vcpkg.git "$VCPKG_ROOT"
           fi
+
+          git -C "$VCPKG_ROOT" fetch --depth 1 origin ${{ env.VCPKG_COMMIT }}
+          git -C "$VCPKG_ROOT" checkout --force ${{ env.VCPKG_COMMIT }}
 
           if [[ "$RUNNER_OS" == "Windows" ]]; then
             if [ ! -f "$VCPKG_ROOT/vcpkg.exe" ]; then

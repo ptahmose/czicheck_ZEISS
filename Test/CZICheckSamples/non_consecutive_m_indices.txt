@@ -4,23 +4,22 @@ Test "check subblock's coordinates for 'consistent dimensions'" : OK
 Test "check subblock's coordinates being unique" : OK
 Test "check whether the document uses the deprecated 'B-index'" : OK
 Test "check that the subblocks of a channel have the same pixeltype" : OK
-Test "Check that planes indices start at 0" :
-  plane indices for 'Z' do not start at 0, but at 1 instead.
- WARN
+Test "Check that planes indices start at 0" : OK
 Test "Check that planes have consecutive indices" : OK
 Test "check if all subblocks have the M index" : OK
 Test "Basic semantic checks of the XML-metadata" :
-  For the following dimensions the start/size given in metadata differs from document statistics: Z
   No valid ComponentBitCount information found in metadata for channel #0.
+  No valid ComponentBitCount information found in metadata for channel #1.
+  No valid ComponentBitCount information found in metadata for channel #2.
  WARN
 Test "validate the XML-metadata against XSD-schema" : OK
 Test "check if subblocks at pyramid-layer 0 of different scenes are overlapping" : OK
 Test "SubBlock-Segments in SubBlockDirectory are valid and valid content" : OK
 Test "Basic semantic checks for TopographyDataItems" : OK
 Test "check if M indices are consecutive" :
-  M indices do not start at 0 for plane [Z1C0T0S0]: smallest M index is 1.
-  M indices do not start at 0 for plane [Z2C0T0S0]: smallest M index is 2.
-  M indices do not start at 0 for plane [Z3C0T0S0]: smallest M index is 3.
+  M indices are not consecutive for plane [C0]: expected 3 but found 4 (subblock index 3).
+  M indices are not consecutive for plane [C1]: expected 1 but found 10 (subblock index 5).
+  M indices do not start at 0 for plane [C2]: smallest M index is 1.
  WARN
 
 

@@ -21,6 +21,7 @@
 #include "checkers/checkerOverlappingScenes.h"
 #include "checkers/checkerSubBlkBitmapValid.h"
 #include "checkers/checkerTopographyApplianceValidation.h"
+#include "checkers/checkerMIndicesAreConsecutive.h"
 
 using namespace std;
 
@@ -31,7 +32,7 @@ struct classEntry
     /// The enum identifying a checker class.
     CZIChecks check;
 
-    /// A human readable display name identifying and describing the checker class.
+    /// A human-readable display name identifying and describing the checker class.
     const string displayname;
 
     /// A short name identifying the checker class. This string has to be unique.
@@ -101,6 +102,7 @@ static const classEntry classesList[] =
 #endif
     MakeEntry<CCheckOverlappingScenesOnLayer0>(),
     MakeEntry<CCheckSubBlkBitmapValid>(),
+    MakeEntry<CCheckMIndicesAreConsecutive>(),
 };
 
 /*static*/std::unique_ptr<IChecker> CCheckerFactory::CreateChecker(

@@ -40,14 +40,8 @@
         {
             "name": "PlanesIndicesStartAtZero",
             "description": "Check that planes indices start at 0",
-            "result": "WARN",
-            "findings": [
-                {
-                    "severity": "WARNING",
-                    "description": "plane indices for 'Z' do not start at 0, but at -1 instead.",
-                    "details": ""
-                }
-            ]
+            "result": "OK",
+            "findings": []
         },
         {
             "name": "PlaneIndicesAreConsecutive",
@@ -68,12 +62,17 @@
             "findings": [
                 {
                     "severity": "WARNING",
-                    "description": "For the following dimensions the start/size given in metadata differs from document statistics: Z",
+                    "description": "No valid ComponentBitCount information found in metadata for channel #0.",
                     "details": ""
                 },
                 {
                     "severity": "WARNING",
-                    "description": "No valid ComponentBitCount information found in metadata for channel #0.",
+                    "description": "No valid ComponentBitCount information found in metadata for channel #1.",
+                    "details": ""
+                },
+                {
+                    "severity": "WARNING",
+                    "description": "No valid ComponentBitCount information found in metadata for channel #2.",
                     "details": ""
                 }
             ]
@@ -109,17 +108,17 @@
             "findings": [
                 {
                     "severity": "WARNING",
-                    "description": "M indices do not start at 0 for plane [Z-1C0T0S0]: smallest M index is 1.",
+                    "description": "M indices are not consecutive for plane [C0]: expected 3 but found 4 (subblock index 3).",
                     "details": ""
                 },
                 {
                     "severity": "WARNING",
-                    "description": "M indices do not start at 0 for plane [Z0C0T0S0]: smallest M index is 2.",
+                    "description": "M indices are not consecutive for plane [C1]: expected 1 but found 10 (subblock index 5).",
                     "details": ""
                 },
                 {
                     "severity": "WARNING",
-                    "description": "M indices do not start at 0 for plane [Z1C0T0S0]: smallest M index is 3.",
+                    "description": "M indices do not start at 0 for plane [C2]: smallest M index is 1.",
                     "details": ""
                 }
             ]

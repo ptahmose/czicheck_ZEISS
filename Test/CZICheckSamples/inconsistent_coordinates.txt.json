@@ -108,10 +108,16 @@
                     "details": "No metadata-segment available."
                 }
             ]
+        },
+        {
+            "name": "MIndicesAreConsecutive",
+            "description": "check if M indices are consecutive",
+            "result": "OK",
+            "findings": []
         }
     ],
     "output_version": {
         "command": "CZICheck",
-        "version": "0.7.4"
+        "version": "0.8.0"
     }
 }

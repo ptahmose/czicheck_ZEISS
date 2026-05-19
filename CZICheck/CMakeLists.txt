@@ -80,6 +80,11 @@ set(CZICHECKSRCFILES
 "checkers/checkerSubBlkBitmapValid.cpp"
 "checkers/checkerTopographyApplianceValidation.h"
 "checkers/checkerTopographyApplianceValidation.cpp"
+"checkers/checkerMIndicesAreConsecutive.h"
+"checkers/checkerMIndicesAreConsecutive.cpp"
+"checkers/utils/planeenumerator.h"
+"checkers/utils/utils.h"
+"checkers/utils/utils.cpp"
 "checkerfactory.cpp"
 "checkerfactory.h"
 "checks.h"
@@ -188,7 +193,6 @@ if (CZICHECK_BUILD_TESTS)
   #  and is described here -> https://cmake.org/cmake/help/book/mastering-cmake/chapter/Testing%20With%20CMake%20and%20CTest.html#managing-test-data
   #  or https://crascit.com/2015/04/03/handling-binary-assets-and-test-data-with-cmake/
   list(APPEND ExternalData_URL_TEMPLATES
-    "https://libczirwtestdata.z13.web.core.windows.net/CZICheckSamples/%(algo)/%(hash)"
     "https://github.com/ptahmose/libCZI_testdata/raw/main/%(algo)/%(hash)"
    )
 
@@ -218,6 +222,7 @@ if (CZICHECK_BUILD_TESTS)
           -r edf-superfluous.czi=DATA{${CMAKE_CURRENT_SOURCE_DIR}/../Test/CZICheckSamples/edf-superfluous.czi}
           -r edf-superfluous-missing-channel-subblock.czi=DATA{${CMAKE_CURRENT_SOURCE_DIR}/../Test/CZICheckSamples/edf-superfluous-missing-channel-subblock.czi}
           -r invalid_componentbitcount.czi=DATA{${CMAKE_CURRENT_SOURCE_DIR}/../Test/CZICheckSamples/invalid_componentbitcount.czi}
+          -r non_consecutive_m_indices.czi=DATA{${CMAKE_CURRENT_SOURCE_DIR}/../Test/CZICheckSamples/non_consecutive_m_indices.czi}
     )
 
     # Add a build target to populate the real data.

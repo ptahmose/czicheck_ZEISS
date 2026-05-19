@@ -164,10 +164,21 @@
       <Result>OK</Result>
       <Findings />
     </Test>
+    <Test Name="MIndicesAreConsecutive">
+      <Description>check if M indices are consecutive</Description>
+      <Result>WARN</Result>
+      <Findings>
+        <Finding>
+          <Severity>WARNING</Severity>
+          <Description>One or more subblocks on plane [T0] have no valid M-index; cannot check M-index consecutivity for this plane.</Description>
+          <Details></Details>
+        </Finding>
+      </Findings>
+    </Test>
   </Tests>
   <AggregatedResult>FAIL</AggregatedResult>
   <OutputVersion>
     <Command>CZICheck</Command>
-    <Version>0.7.4</Version>
+    <Version>0.8.0</Version>
   </OutputVersion>
 </TestResults>
