@@ -116,3 +116,5 @@ cmake .. -DCMAKE_BUILD_TYPE=Release
 
 If you already pass a toolchain file explicitly (e.g., `-DCMAKE_TOOLCHAIN_FILE=/path/to/vcpkg.cmake`), the bootstrap is skipped.
 
+Use `-DCZICHECK_ENABLE_VCPKG_BOOTSTRAP=OFF` to fetch libCZI directly and discover XercesC without automatic vcpkg bootstrapping. In both configurations, CZICheck uses the separately fetched pugixml in wide-character mode; its headers take precedence over libCZI's vendored pugixml headers.
+
