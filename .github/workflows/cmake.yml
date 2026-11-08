@@ -101,6 +101,7 @@ jobs:
                 -DCMAKE_TOOLCHAIN_FILE="${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" \
                 -DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }} \
                 -DCZICHECK_BUILD_TESTS=ON
+                -DCZICHECK_ENABLE_VCPKG_BOOTSTRAP=OFF
 
       - name: Configure CMake (Linux)
         if: ${{ (matrix.os == 'ubuntu-latest') }}
@@ -109,6 +110,7 @@ jobs:
           cmake -B "${{github.workspace}}/build" -G Ninja -DCMAKE_BUILD_TYPE=${{matrix.build}} \
                 -DCMAKE_TOOLCHAIN_FILE="${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" \
                 -DCZICHECK_BUILD_TESTS=ON
+                -DCZICHECK_ENABLE_VCPKG_BOOTSTRAP=OFF
 
       - name: Build
         # Build your program with the given configuration
