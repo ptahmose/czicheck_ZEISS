@@ -6,8 +6,10 @@ include(FetchContent)
 
 FetchContent_Declare(
   libCZI
-  GIT_REPOSITORY https://github.com/ZEISS/libczi.git
-  GIT_TAG        b85521a4aecc016f944cfb6dac8dfe9c668c343a # v0.67.6
+  #GIT_REPOSITORY https://github.com/ZEISS/libczi.git
+  GIT_REPOSITORY https://github.com/ptahmose/libczi-zeiss.git
+  #GIT_TAG        b85521a4aecc016f944cfb6dac8dfe9c668c343a # v0.67.6
+  GIT_TAG        jbl/jpg-codec
 )
 
 if(NOT libCZI_POPULATED)
